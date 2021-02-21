@@ -22,13 +22,10 @@ function paintToDo(text, id) {
   const li = document.createElement("li");
   const delBtn = document.createElement("button");
   const span = document.createElement("span");
-  const icon = document.createElement("span");
 
-  icon.innerHTML = "✔";
   delBtn.innerHTML = "❌";
   delBtn.addEventListener("click", del);
   span.innerText = text;
-  li.appendChild(icon);
   li.appendChild(delBtn);
   li.appendChild(span);
 
@@ -60,5 +57,9 @@ function loadToDos() {
   }
 }
 
-loadToDos();
-toDoForm.addEventListener("submit", handleToDoSubmit);
+function init() {
+  loadToDos();
+  toDoForm.addEventListener("submit", handleToDoSubmit);
+}
+
+init();
